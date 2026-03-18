@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import MatrixRain from "./MatrixRain";
 
 export default function Hero() {
   return (
@@ -8,6 +9,9 @@ export default function Hero() {
       style={{ backgroundColor: "var(--cream)", minHeight: "100vh" }}
       className="relative flex flex-col justify-center px-6 md:px-16 lg:px-24 overflow-hidden"
     >
+      {/* Matrix Rain фон */}
+      <MatrixRain />
+
       {/* Декоративный фон */}
       <div
         style={{
@@ -22,7 +26,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-5xl mx-auto w-full pt-24 pb-16">
+      <div className="max-w-5xl mx-auto w-full pt-24 pb-16 relative" style={{ zIndex: 1 }}>
         {/* Имя */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
