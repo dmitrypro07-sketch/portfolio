@@ -26,7 +26,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-5xl mx-auto w-full pt-24 pb-16 relative px-6 md:px-16 lg:px-24" style={{ zIndex: 1 }}>
+      <div style={{ zIndex: 1, position: "relative", maxWidth: "1024px", margin: "0 auto", width: "100%", paddingTop: "96px", paddingBottom: "64px", paddingLeft: "clamp(24px, 6vw, 96px)", paddingRight: "clamp(24px, 6vw, 96px)" }}>
         {/* Имя */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
