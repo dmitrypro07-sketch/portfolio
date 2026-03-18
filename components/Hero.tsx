@@ -105,7 +105,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1 }}
-          className="flex gap-12 mt-20"
+          className="flex flex-wrap gap-8 md:gap-12 mt-16 md:mt-20"
         >
           {[
             { num: "85%", label: "сообщений обрабатывает ИИ" },

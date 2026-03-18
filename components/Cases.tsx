@@ -84,7 +84,7 @@ export default function Cases() {
 
             <div className="gold-line mb-10" />
 
-            <div className="flex gap-12 flex-wrap">
+            <div className="flex gap-8 md:gap-12 flex-wrap">
               {c.results.map((r, j) => (
                 <div key={j}>
                   <p style={{ color: "var(--gold)", fontFamily: "'Cormorant Garamond', serif" }} className="text-4xl font-light">

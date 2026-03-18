@@ -7,7 +7,7 @@ export default function Contact() {
     <section
       id="contact"
       style={{ backgroundColor: "var(--ink)" }}
-      className="py-24 px-6 md:px-16 lg:px-24 relative overflow-hidden"
+      className="py-16 md:py-24 px-6 md:px-16 lg:px-24 relative overflow-hidden"
     >
       {/* Декоративный круг */}
       <div style={{
