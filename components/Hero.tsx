@@ -26,7 +26,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-5xl mx-auto w-full pt-24 pb-16 relative" style={{ zIndex: 1 }}>
+      <div className="max-w-5xl mx-auto w-full pt-24 pb-16 relative px-4 md:px-0" style={{ zIndex: 1 }}>
         {/* Имя */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
