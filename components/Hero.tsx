@@ -6,8 +6,8 @@ import MatrixRain from "./MatrixRain";
 export default function Hero() {
   return (
     <section
-      style={{ backgroundColor: "var(--cream)", minHeight: "100vh", paddingLeft: "clamp(24px, 8vw, 120px)", paddingRight: "clamp(24px, 8vw, 120px)" }}
-      className="relative flex flex-col justify-center overflow-hidden"
+      style={{ backgroundColor: "var(--cream)", minHeight: "100vh" }}
+      className="section-padding relative flex flex-col justify-center overflow-hidden"
     >
       {/* Matrix Rain фон */}
       <MatrixRain />
