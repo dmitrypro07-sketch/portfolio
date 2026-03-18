@@ -22,7 +22,7 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section style={{ backgroundColor: "var(--cream-dark)" }} className="py-24 px-6 md:px-16 lg:px-24">
+    <section id="process" style={{ backgroundColor: "var(--cream-dark)" }} className="py-24 px-6 md:px-16 lg:px-24">
       <div className="max-w-5xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
