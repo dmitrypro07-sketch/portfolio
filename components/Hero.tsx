@@ -7,7 +7,7 @@ export default function Hero() {
   return (
     <section
       style={{ backgroundColor: "var(--cream)", minHeight: "100vh" }}
-      className="section-padding relative flex flex-col justify-center overflow-hidden"
+      className="relative flex flex-col justify-center overflow-hidden"
     >
       {/* Matrix Rain фон */}
       <MatrixRain />
@@ -26,7 +26,7 @@ export default function Hero() {
         }}
       />
 
-      <div style={{ zIndex: 1, position: "relative", maxWidth: "1024px", margin: "0 auto", width: "100%", paddingTop: "96px", paddingBottom: "64px", paddingLeft: "clamp(24px, 6vw, 96px)", paddingRight: "clamp(24px, 6vw, 96px)" }}>
+      <div style={{ zIndex: 1, position: "relative", paddingTop: "96px", paddingBottom: "64px", paddingLeft: "80px", paddingRight: "80px" }}>
         {/* Имя */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
