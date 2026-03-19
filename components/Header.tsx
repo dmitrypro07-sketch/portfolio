@@ -33,19 +33,8 @@ export default function Header() {
         transition: "all 0.4s ease",
       }}
     >
-      <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16">
-        {/* Логотип */}
-        <a href="#" className="flex items-center">
-          <Image
-            src="/logo.png"
-            alt="D.PROX"
-            width={80}
-            height={50}
-            style={{ objectFit: "contain" }}
-          />
-        </a>
-
-        {/* Десктоп навигация */}
+      <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 h-16 relative flex items-center justify-between">
+        {/* Десктоп навигация — слева */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
@@ -57,13 +46,31 @@ export default function Header() {
                 letterSpacing: "0.1em",
                 transition: "color 0.2s ease",
               }}
-              className="text-xs uppercase hover:text-ink"
+              className="text-xs uppercase"
               onMouseEnter={e => (e.currentTarget.style.color = "var(--ink)")}
               onMouseLeave={e => (e.currentTarget.style.color = "var(--muted)")}
             >
               {link.label}
             </a>
           ))}
+        </nav>
+
+        {/* Пустой блок на мобиле слева */}
+        <div className="md:hidden w-8" />
+
+        {/* Логотип — строго по центру */}
+        <a href="#" className="absolute left-1/2 -translate-x-1/2 flex items-center">
+          <Image
+            src="/logo.png"
+            alt="D.PROX"
+            width={120}
+            height={75}
+            style={{ objectFit: "contain" }}
+          />
+        </a>
+
+        {/* Кнопка — справа */}
+        <div className="hidden md:flex">
           <a
             href="https://t.me/DmitryiP03"
             target="_blank"
@@ -79,24 +86,26 @@ export default function Header() {
           >
             Написать →
           </a>
-        </nav>
+        </div>
 
-        {/* Бургер для мобильного */}
-        <button
-          className="md:hidden flex flex-col gap-1.5 p-2"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Меню"
-        >
-          <span style={{ backgroundColor: "var(--ink)", transition: "all 0.3s ease", transformOrigin: "center",
-            transform: menuOpen ? "rotate(45deg) translateY(8px)" : "none" }}
-            className="block w-6 h-px" />
-          <span style={{ backgroundColor: "var(--ink)", transition: "all 0.3s ease",
-            opacity: menuOpen ? 0 : 1 }}
-            className="block w-6 h-px" />
-          <span style={{ backgroundColor: "var(--ink)", transition: "all 0.3s ease", transformOrigin: "center",
-            transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "none" }}
-            className="block w-6 h-px" />
-        </button>
+        {/* Бургер для мобильного — справа */}
+        <div className="md:hidden flex">
+          <button
+            className="flex flex-col gap-1.5 p-2"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Меню"
+          >
+            <span style={{ backgroundColor: "var(--ink)", transition: "all 0.3s ease", transformOrigin: "center",
+              transform: menuOpen ? "rotate(45deg) translateY(8px)" : "none" }}
+              className="block w-6 h-px" />
+            <span style={{ backgroundColor: "var(--ink)", transition: "all 0.3s ease",
+              opacity: menuOpen ? 0 : 1 }}
+              className="block w-6 h-px" />
+            <span style={{ backgroundColor: "var(--ink)", transition: "all 0.3s ease", transformOrigin: "center",
+              transform: menuOpen ? "rotate(-45deg) translateY(-8px)" : "none" }}
+              className="block w-6 h-px" />
+          </button>
+        </div>
       </div>
 
       {/* Мобильное меню */}

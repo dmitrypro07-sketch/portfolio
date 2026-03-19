@@ -12,41 +12,41 @@ export default function MatrixRain() {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
+    if (window.innerWidth < 768) return;
+
+    const tokens = ["0", "1", "AI", "API", "BOT", "GPT", "CRM", "n8n"];
+    const fontSize = 13;
+    const colWidth = 36;
+    let drops: number[] = [];
+
     const resize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+      const columns = Math.floor(canvas.width / colWidth);
+      drops = Array(columns).fill(1);
     };
     resize();
     window.addEventListener("resize", resize);
 
-    const chars = "01アイウエオカキクケコn8nAPIAIBOT自動化效率化運営".split("");
-    const fontSize = 14;
-    let columns = Math.floor(canvas.width / fontSize);
-    const drops: number[] = Array(columns).fill(1);
-
     const draw = () => {
-      // Полупрозрачный оверлей для эффекта затухания
-      ctx.fillStyle = "rgba(245, 240, 232, 0.05)";
+      ctx.fillStyle = "rgba(245, 240, 232, 0.06)";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-      columns = Math.floor(canvas.width / fontSize);
-
       for (let i = 0; i < drops.length; i++) {
-        const char = chars[Math.floor(Math.random() * chars.length)];
-        const x = i * fontSize;
+        const token = tokens[Math.floor(Math.random() * tokens.length)];
+        const x = i * colWidth;
         const y = drops[i] * fontSize;
 
-        // Голова потока — ярче
+        // Голова потока — ярче, хвост — темнее
         if (drops[i] * fontSize < canvas.height * 0.3) {
-          ctx.fillStyle = "rgba(184, 147, 63, 0.15)";
+          ctx.fillStyle = "rgba(184, 147, 63, 0.28)";
         } else {
-          ctx.fillStyle = "rgba(160, 98, 58, 0.07)";
+          ctx.fillStyle = "rgba(140, 90, 40, 0.14)";
         }
 
         ctx.font = `${fontSize}px monospace`;
-        ctx.fillText(char, x, y);
+        ctx.fillText(token, x, y);
 
-        // Сброс потока вниз
         if (y > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
         }

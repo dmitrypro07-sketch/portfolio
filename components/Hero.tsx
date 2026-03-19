@@ -26,18 +26,7 @@ export default function Hero() {
         }}
       />
 
-      <div style={{ zIndex: 1, position: "relative", paddingTop: "96px", paddingBottom: "64px", paddingLeft: "80px", paddingRight: "80px" }}>
-        {/* Имя */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
-          style={{ color: "var(--gold)", fontFamily: "'DM Sans', sans-serif", letterSpacing: "0.2em" }}
-          className="text-sm font-medium uppercase mb-6"
-        >
-          Дмитрий Прокофьев
-        </motion.p>
-
+      <div style={{ zIndex: 1, position: "relative" }} className="pt-24 pb-16 px-6 md:px-16 lg:px-20">
         {/* Заголовок */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -46,9 +35,9 @@ export default function Hero() {
           style={{ color: "var(--ink)", fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.1 }}
           className="text-5xl md:text-7xl lg:text-8xl font-light mb-8"
         >
-          Автоматизирую<br />
-          <em style={{ color: "var(--gold)" }}>бизнес-процессы</em><br />
-          с помощью ИИ
+          Освобождаю от рутины<br />
+          <em style={{ color: "var(--gold)" }}>и спешки —</em><br />
+          дай ИИ говорить с клиентами
         </motion.h1>
 
         {/* Подзаголовок */}
@@ -125,6 +114,9 @@ export default function Hero() {
               </p>
             </div>
           ))}
+          <p style={{ color: "var(--muted)", fontFamily: "'DM Sans', sans-serif", width: "100%" }} className="text-xs mt-2 opacity-60">
+            * результаты кейса: врач-косметолог, Петрозаводск
+          </p>
         </motion.div>
       </div>
 

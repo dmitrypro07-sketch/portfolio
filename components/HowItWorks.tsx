@@ -6,17 +6,20 @@ const steps = [
   {
     step: "01",
     title: "Созвон",
-    desc: "Разбираемся в задаче. Я задаю вопросы, слушаю, нахожу узкие места и понимаю, что именно нужно автоматизировать.",
+    time: "30 минут",
+    desc: "За 30 минут выясняю где бизнес теряет деньги на рутине. Если решение не окупится — скажу честно.",
   },
   {
     step: "02",
     title: "Коммерческое предложение",
-    desc: "Готовлю КП с описанием решения, стеком технологий и стоимостью. Без воды — только конкретика.",
+    time: "до 24 часов",
+    desc: "Прорабатываю сценарии, готовлю КП с описанием решения, стеком и стоимостью. Без воды — только конкретика.",
   },
   {
     step: "03",
-    title: "Разработка и запуск",
-    desc: "Реализую решение, тестирую, передаю с инструкцией. Остаюсь на связи после запуска.",
+    title: "Запуск и доработка",
+    time: "48ч тест → подключение",
+    desc: "За 48 часов запускаю тестовую версию. Смотрим как работает, правим. Потом подключаем к твоим каналам и дорабатываем по ходу.",
   },
 ];
 
@@ -66,9 +69,12 @@ export default function HowItWorks() {
               >
                 {s.step}
               </span>
-              <h3 style={{ color: "var(--ink)" }} className="text-2xl font-light mb-4">
+              <h3 style={{ color: "var(--ink)" }} className="text-2xl font-light mb-2">
                 {s.title}
               </h3>
+              <p style={{ color: "var(--gold)", letterSpacing: "0.1em" }} className="text-xs uppercase mb-4">
+                {s.time}
+              </p>
               <p style={{ color: "var(--muted)", lineHeight: 1.8 }} className="text-sm">
                 {s.desc}
               </p>
@@ -83,6 +89,33 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="mt-12 flex justify-center"
+        >
+          <a
+            href="https://t.me/DmitryiP03"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              backgroundColor: "var(--gold)",
+              color: "var(--cream)",
+              fontFamily: "'DM Sans', sans-serif",
+              letterSpacing: "0.08em",
+              transition: "opacity 0.2s ease",
+            }}
+            className="text-sm uppercase px-8 py-4 hover:opacity-90"
+            onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--gold-light)")}
+            onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--gold)")}
+          >
+            Начнём? Запиши созвон →
+          </a>
+        </motion.div>
+
       </div>
     </section>
   );

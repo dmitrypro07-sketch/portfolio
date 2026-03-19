@@ -49,8 +49,8 @@ export default function Contact() {
           style={{ color: "var(--cream)", fontFamily: "'Cormorant Garamond', serif", lineHeight: 1.1 }}
           className="text-4xl md:text-6xl font-light mb-6"
         >
-          Готовы автоматизировать<br />
-          <em style={{ color: "var(--gold)" }}>ваш бизнес?</em>
+          Готов автоматизировать<br />
+          <em style={{ color: "var(--gold)" }}>твой бизнес?</em>
         </motion.h2>
 
         <motion.p
@@ -61,7 +61,7 @@ export default function Contact() {
           style={{ color: "rgba(245,240,232,0.5)", lineHeight: 1.8 }}
           className="text-base mb-10"
         >
-          Напишите мне — разберёмся в задаче, найдём решение и обсудим стоимость. Первый созвон бесплатно.
+          Напиши мне — разберёмся в задаче, найдём решение и обсудим стоимость. Созвон бесплатно.
         </motion.p>
 
         <motion.div

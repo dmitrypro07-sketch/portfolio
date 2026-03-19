@@ -2,19 +2,21 @@
 
 import { motion } from "framer-motion";
 
+const stampLabels = ["ГАРАНТИЯ • РЕЗУЛЬТАТА •", "ГАРАНТИЯ • СКОРОСТИ •", "ГАРАНТИЯ • КАЧЕСТВА •"];
+
 const services = [
   {
     num: "01",
     title: "Автоматизация процессов",
-    tagline: "Убираем 80% ручной рутины за 2–4 недели",
-    desc: "Без найма сотрудников, даже если ты далёк от технологий. Интегрирую CRM, мессенджеры, таблицы и почту в одну цепочку — система работает сама, пока ты занимаешься бизнесом.",
+    tagline: "Убираю 80% ручной рутины за 2–4 недели",
+    desc: "Без найма сотрудников. Интегрирую CRM, мессенджеры, таблицы и почту в одну цепочку — система работает сама, пока ты занимаешься бизнесом.",
     bullets: [
       "За 30 минут созвона находим 3 процесса для автоматизации",
       "Работает 24/7 — не берёт отпуск, не просит повышения",
       "Настраиваю до тех пор, пока не заработает",
     ],
-    guarantee: "Не экономит 10 часов в месяц — возвращаю деньги",
-    tags: ["n8n", "Make", "API"],
+    guarantee: "30 дней дорабатываю бесплатно. Пока не скажешь «работает» — не ухожу.",
+    tags: ["n8n", "API"],
   },
   {
     num: "02",
@@ -23,15 +25,15 @@ const services = [
     desc: "85% обращений закрывает ИИ без твоего участия. Больше не теряешь клиентов из-за долгих ответов — они уходят к конкурентам уже через 3–5 минут ожидания.",
     bullets: [
       "Записывает, консультирует и обрабатывает возражения пока ты спишь",
-      "Чёткий сценарий без галлюцинаций и отсебятины",
+      "Отвечает строго по скрипту — только то, что ты согласовал",
       "Передаёт сложные случаи живому менеджеру",
     ],
-    guarantee: "Бот отвечает неправильно — дорабатываю бесплатно",
+    guarantee: "Бот отвечает неправильно — дорабатываю бесплатно в течение 30 дней после запуска",
     tags: ["Savvy", "Neuroagents", "Telegram"],
   },
   {
     num: "03",
-    title: "Вайбкодинг",
+    title: "Веб-приложения",
     tagline: "Рабочее веб-приложение за 1–2 недели",
     desc: "Без команды разработчиков. Идея, которая месяцами висела в голове — становится реальным продуктом. Лендинг, портфолио, калькулятор, дашборд — любой веб-инструмент.",
     bullets: [
@@ -71,11 +73,38 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              style={{ backgroundColor: "var(--cream)", transition: "background 0.3s ease" }}
+              style={{ backgroundColor: "var(--cream)", transition: "background 0.3s ease", position: "relative" }}
               className="p-8 md:p-12"
               onMouseEnter={e => (e.currentTarget.style.backgroundColor = "var(--cream-dark)")}
               onMouseLeave={e => (e.currentTarget.style.backgroundColor = "var(--cream)")}
             >
+              {/* Печать гарантии */}
+              <motion.div
+                initial={{ opacity: 0, scale: 1.5, rotate: -30, y: -80 }}
+                whileInView={{ opacity: 1, scale: 1, rotate: -12, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 4.5, type: "spring", stiffness: 200, damping: 18 }}
+                style={{ position: "absolute", bottom: "16px", right: "16px", zIndex: 2, pointerEvents: "none" }}
+              >
+                <svg width="220" height="220" viewBox="0 0 110 110">
+                  <defs>
+                    <path id={`circle-${i}`} d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+                    <linearGradient id={`gold-grad-${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" stopColor="#E8C56A" />
+                      <stop offset="35%" stopColor="#D4A853" />
+                      <stop offset="65%" stopColor="#B8933F" />
+                      <stop offset="100%" stopColor="#9A7A30" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="55" cy="55" r="50" fill="none" stroke={`url(#gold-grad-${i})`} strokeWidth="2.5" opacity="0.95" />
+                  <circle cx="55" cy="55" r="42" fill="none" stroke={`url(#gold-grad-${i})`} strokeWidth="1" opacity="0.6" />
+                  <text style={{ fontSize: "9.5px", fontFamily: "'DM Sans', sans-serif", fontWeight: 700, letterSpacing: "0.18em", fill: `url(#gold-grad-${i})` }}>
+                    <textPath href={`#circle-${i}`} startOffset="6%">{stampLabels[i]}</textPath>
+                  </text>
+                  <image href="/logo.png" x="-1" y="-1" width="112" height="112" />
+                </svg>
+              </motion.div>
+
               <div className="flex flex-col md:flex-row md:items-start gap-6">
                 <span style={{ color: "var(--gold)", fontFamily: "'Cormorant Garamond', serif" }}
                   className="text-6xl font-light shrink-0 leading-none">

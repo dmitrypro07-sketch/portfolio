@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const tools = ["n8n", "Make", "OpenAI", "Telegram", "Savvy", "Neuroagents", "Vercel", "Supabase"];
+const tools = ["n8n", "OpenAI", "Telegram", "Savvy", "Neuroagents", "Vercel", "Supabase"];
 
 export default function LogosStrip() {
   return (
