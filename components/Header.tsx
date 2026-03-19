@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
   { label: "Услуги", href: "#services" },
@@ -34,12 +35,14 @@ export default function Header() {
     >
       <div className="max-w-5xl mx-auto px-6 md:px-16 lg:px-24 flex items-center justify-between h-16">
         {/* Логотип */}
-        <a
-          href="#"
-          style={{ fontFamily: "'Cormorant Garamond', serif", color: "var(--ink)", letterSpacing: "0.05em" }}
-          className="text-xl font-light"
-        >
-          ДП
+        <a href="#" className="flex items-center">
+          <Image
+            src="/logo.png"
+            alt="D.PROX"
+            width={80}
+            height={50}
+            style={{ objectFit: "contain" }}
+          />
         </a>
 
         {/* Десктоп навигация */}
