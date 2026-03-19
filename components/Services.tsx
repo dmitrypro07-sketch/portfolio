@@ -84,9 +84,10 @@ export default function Services() {
                 whileInView={{ opacity: 1, scale: 1, rotate: -12, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 4.5, type: "spring", stiffness: 200, damping: 18 }}
-                style={{ position: "absolute", bottom: "16px", right: "16px", zIndex: 2, pointerEvents: "none" }}
+                style={{ position: "absolute", bottom: "12px", right: "12px", zIndex: 2, pointerEvents: "none" }}
+                className="w-[130px] h-[130px] md:w-[220px] md:h-[220px]"
               >
-                <svg width="220" height="220" viewBox="0 0 110 110">
+                <svg width="100%" height="100%" viewBox="0 0 110 110">
                   <defs>
                     <path id={`circle-${i}`} d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
                     <linearGradient id={`gold-grad-${i}`} x1="0%" y1="0%" x2="100%" y2="100%">
