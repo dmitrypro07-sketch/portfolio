@@ -2,13 +2,14 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://portfolio-ten-rust-57.vercel.app"),
   title: "Дмитрий Прокофьев — Автоматизация бизнеса и ИИ",
   description: "Внедряю ИИ-ассистентов и автоматизацию бизнес-процессов. Избавляю от рутины — за 48 часов запускаю рабочее решение. Чат-боты, n8n, Savvy, Uclients.",
   keywords: ["автоматизация бизнеса", "ИИ ассистент", "чат-бот", "n8n", "Savvy", "Uclients", "автоматизация процессов"],
   openGraph: {
     title: "Дмитрий Прокофьев — Автоматизация бизнеса и ИИ",
     description: "Внедряю ИИ-ассистентов и автоматизацию бизнес-процессов. За 48 часов запускаю рабочее решение.",
-    url: "https://dmitry-prokofiev.vercel.app",
+    url: "https://portfolio-ten-rust-57.vercel.app",
     siteName: "Дмитрий Прокофьев",
     locale: "ru_RU",
     type: "website",
